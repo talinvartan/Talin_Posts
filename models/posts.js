@@ -6,6 +6,7 @@
 
 var mongoose = require('mongoose');
 
+
 var PostModel = mongoose.model('Post', {
     title: {
         type: String,

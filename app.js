@@ -27,6 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'bower_components')));
 
+// connect to mongoose test database
 mongoose.connect('mongodb://localhost/test', function() {
     console.log('Connected to mongoose');
 });

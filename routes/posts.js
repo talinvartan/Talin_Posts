@@ -18,13 +18,27 @@ router.get('/all', function(req, res){
     // get a list of all the titles for all posts read about mongoose find() method
     PostModel.find({},{title: 1, _id: 1}, function(err, results){
         if(err){
+            console.log(err);
             res.status(500).json(err);
         }else {
+            console.log(results);
             res.status(200).json(results);
         }
     });
-    // send a response to the user to show it
+});
 
+router.post('/all', function(req, res){
+    console.log(req.body);
+    var post = new PostModel(req.body);
+    post.save(function(err, result){
+        if(err){
+            console.log(err);
+            res.status(500).json(err);
+        } else {
+            console.log(result);
+            res.status(200).json(result);
+        }
+    });
 });
 
 //testPostCreation();
