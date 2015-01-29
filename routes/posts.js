@@ -27,7 +27,7 @@ router.get('/all', function(req, res){
     });
 });
 
-router.post('/all', function(req, res){
+router.post('/', function(req, res){
     console.log(req.body);
     var post = new PostModel(req.body);
     post.save(function(err, result){
